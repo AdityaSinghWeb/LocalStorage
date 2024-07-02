@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ques1</title>
+  </head>
+  <body>
+    <h1></h1>
+    <button>Increment</button>
+    <button>Decrement</button>
+  </body>
+</html>
+<script>
+  let count = localStorage.getItem("store")||0
+  document.querySelector("h1").innerText = count;
+
+  document.querySelector("h1+button").addEventListener("click", incr);
+  function incr() {
+    count++;
+    let inc = (document.querySelector("h1").innerText = count);
+    localStorage.setItem("store", inc);
+  }
+
+  document.querySelector("button+button").addEventListener("click", decr);
+  function decr() {
+    count--;
+    let dec = (document.querySelector("h1").innerText = count);
+    localStorage.setItem("store", dec);
+  }
+</script>
